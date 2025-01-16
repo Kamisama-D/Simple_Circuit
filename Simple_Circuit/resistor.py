@@ -1,9 +1,10 @@
-class Register:
-    def __init__(self, name, bus1, bus2, r):
+class Resister:
+    def __init__(self, name:str, bus1:str, bus2:str, r:float):
         self.name = name
         self.bus1 = bus1
         self.bus2 = bus2
         self.r = r
+
         self.g = 0.0
         self.calc_g()
 
@@ -14,5 +15,6 @@ class Register:
             self.g = float('inf')
 
 if __name__ == '__main__':
-    resistor = Register("R1", "Bus A", "Bus B", 5.0)
+    resistor = Resister("R1", "Bus A", "Bus B", 5.0)
+    print(f"Resistor {resistor.name} has resistance: {resistor.r} ohm")
     print(f"Resistor {resistor.name} has conductance: {resistor.g} S")
