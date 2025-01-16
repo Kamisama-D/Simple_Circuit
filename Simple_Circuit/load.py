@@ -4,7 +4,6 @@ class Load:
         self.bus1 = bus1
         self.p = p
         self.v = v
-
         self.r = 0.0
         self.g = 0.0
         self.calc_g()
