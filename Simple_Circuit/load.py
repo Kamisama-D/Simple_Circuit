@@ -4,8 +4,8 @@ class Load:
         self.bus1 = bus1
         self.p = p
         self.v = v
-        self.r = 0.0
-        self.g = 0.0
+        self.r = float
+        self.g = float
         self.calc_g()
 
     def calc_g(self):
