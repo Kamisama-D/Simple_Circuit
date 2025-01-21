@@ -63,8 +63,8 @@ if __name__ == "__main__":
     my_circuit.print_circuit_current()
 
     if "Resistor 1" in my_circuit.resistors:
-        print(f"Resistance R1 (Resistor 1): {my_circuit.resistors['Resistor 1'].r} ohms")
+        print(f"Resistance R1 (Resistor 1): {my_circuit.resistors['Resistor 1'].r} ohms.")
 
     if "Load 1" in my_circuit.loads:
         calculated_rload = my_circuit.loads["Load 1"].r
-        print(f"Resistance Rload (Load 1): {calculated_rload} ohms")
+        print(f"Resistance Rload (Load 1): {calculated_rload} ohms.")
