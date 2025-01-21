@@ -45,10 +45,10 @@ class Circuit:
         self.i = self.vsource.v / total_resistor
 
     def print_nodal_voltage(self, bus:str):
-        print(f"Voltage at {self.buses[bus].name}: {self.buses[bus].v} V")
+        print(f"{self.buses[bus].name} Voltage = {self.buses[bus].v} V")
 
     def print_circuit_current(self):
-        print(f"Circuit current: {self.i} A")
+        print(f"Circuit current = {self.i} A")
 
 if __name__ == "__main__":
     my_circuit = Circuit("Test Circuit")
