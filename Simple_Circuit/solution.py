@@ -12,7 +12,7 @@ class Solution:
             self.circuit.set_i(i)
         self.circuit.print_circuit_current()
 
-        # Determine the voltage at bus A and B
+        # Determine the voltage at bus A and B, assume that we know the topology of the circuit
         bus_list = list(self.circuit.buses)
         bus1 = bus_list[0]
         bus2 = bus_list[1]
