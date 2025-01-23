@@ -1,11 +1,4 @@
 @startuml
-class Solution {
-    circuit: Circuit
-    do_power_flow()
-}
-@enduml
-
-@startuml
 class Bus {
     + name: str
     + v: float
