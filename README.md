@@ -9,7 +9,7 @@ The Simple Circuit Simulator (SCS) is a Python-based tool designed to model and 
 - **Model DC Circuit:** Users can construct simple DC circuits by adding multiple circuit elements such as voltage source, buses, resistors, and load and specifying component values.
 - **Solve DC Circuit:** The simulator calculates and displays the voltage at each bus and the current flowing through the circuit, providing instant output on the circuit's behavior.
 
-![Figure 1. Schematic of the DC Circuit](/path/to/figure1.png)
+![Figure 1. Schematic of the DC Circuit](/Simple%20Circuit.png)
 
 #### 1.2 Problem Solving and Real-World Applications
 The SCS provides a virtual environment where users can experiment with circuit configurations and instantly observe the outcomes. Its real-world applications are:
@@ -20,31 +20,27 @@ The SCS provides a virtual environment where users can experiment with circuit c
 ### 2. Class Diagrams
 Figure 2 shows the class diagrams of the SCS. The diagrams are generated using the `diagram.puml` file, which is processed by the PlantUML plugin in PyCharm.
 
-![Figure 2. Diagram of the DC Circuit](/path/to/figure2.png)
+![Figure 2. Diagram of the DC Circuit](/diagram.png)
 
 ### 3. Relevant Equations
 The equations used in the SCS include Ohm’s law, power-voltage relationship, conductance calculations, and KVL to solve for circuit voltages and current.
 
 #### 3.1 Ohm’s Law
-Ohm's Law is for determining the current flowing through a component in an electrical circuit. It is expressed as: `I = V / R`
-
-Where `I` is the current through the component (in amperes, A), `V` is the voltage across the component (in volts, V), and `R` is the resistance of the component (in ohms, Ω).
+Ohm's Law is for determining the current flowing through a component in an electrical circuit. It is expressed as: `I = V / R`, 
+where `I` is the current through the component (in amperes, A), `V` is the voltage across the component (in volts, V), and `R` is the resistance of the component (in ohms, Ω).
 
 #### 3.2 Power-Voltage Relationship
-The power consumed by a component in a DC circuit can be calculated using the power-voltage relationship, which is given by: `P = V * I`
-
-Where `P` is the power (in watts, W), `I` is the current through the component (in amperes, A), and `V` is the voltage across the component (in volts, V).  
+The power consumed by a component in a DC circuit can be calculated using the power-voltage relationship, which is given by: `P = V * I`, 
+where `P` is the power (in watts, W), `I` is the current through the component (in amperes, A), and `V` is the voltage across the component (in volts, V).  
 By combining Ohm’s law and power-voltage relationship, the resistance `R` of a component can be calculated using its voltage `V` and power `P`: `R = V^2 / P`
 
 #### 3.3 Conductance Calculations
-The conductance of a component is the inverse of its resistance: `G = 1 / R`
-
-Where `G` is the conductance (in siemens, S), and `R` is the resistance of the component (in ohms, Ω).
+The conductance of a component is the inverse of its resistance: `G = 1 / R`, 
+where `G` is the conductance (in siemens, S), and `R` is the resistance of the component (in ohms, Ω).
 
 #### 3.4 Kirchhoff’s Voltage Law (KVL) to Solve for System Voltages and Current
-KVL ensures the sum of the voltage drops around the circuit equals the voltage of the source. KVL can be represented as: `V_source = V_1 + V_2 = I * R_1 + I * R_2`
-
-Where `V_source` is the voltage of the source, `I` is the current,  `V_1`, `V_2` are voltages of all the other components of the circuit, and `R_1`, `R_2` are the resistors. 
+KVL ensures the sum of the voltage drops around the circuit equals the voltage of the source. KVL can be represented as: `V_source = V_1 + V_2 = I * R_1 + I * R_2`, 
+where `V_source` is the voltage of the source, `I` is the current,  `V_1`, `V_2` are voltages of all the other components of the circuit, and `R_1`, `R_2` are the resistors. 
 
 ### 4. Example Case
 
