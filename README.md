@@ -21,7 +21,7 @@ The SCS provides a virtual environment where users can experiment with circuit c
 ### 2. Class Diagrams
 [Figure 2](https://github.com/Kamisama-D/Simple_Circuit/blob/main/diagram.png) shows the class diagrams of the SCS. The diagrams are generated using the [diagram.puml](https://github.com/Kamisama-D/Simple_Circuit/blob/main/Simple_Circuit/diagram.puml) file, which is processed by the PlantUML plugin in PyCharm.
 
-<img src="/diagram.png" alt="Figure 2. Diagram of the DC Circuit" width="600"/>
+<img src="/diagram.png" alt="Figure 2. Diagram of the DC Circuit" width="450"/>
 
 ### 3. Relevant Equations
 The equations used in the SCS include Ohm’s law, power-voltage relationship, conductance calculations, and KVL to solve for circuit voltages and current.
