@@ -145,38 +145,54 @@ The problem is to solve the current of the circuit, and the voltages of bus A an
 #### 4.2 Solution Process
 The solution details are in the `Solution` class in [solution.py](https://github.com/Kamisama-D/Simple_Circuit/blob/main/Simple_Circuit/solution.py) file. The total resistance along the circuit is computed by summing the resistances of the resistor element and the load element: 
 ```
-R_total = R_ab + R_load = R_ab + V_load^2 / P = 50 + 100^2 / 1000 = 60 Ohms
+R_total = R_ab + R_load = R_ab + V_load^2 / P
 ```
 
 Using Ohm's Law, the current (`I`) flowing through the circuit is calculated as: 
 ```
-I = V_a / R_total = 120 / 60 = 2 A
+I = V_a / R_total 
 ```
 
 The voltage at bus A (`V_busA`) is set equal to the source voltage since it is directly connected to the voltage source: 
 ```
-V_busA = V_a = 120 V
+V_busA = V_a 
 ```
 
 The voltage at bus B (`V_busB`) is calculated using the current through the circuit and the resistance of the load: 
 ```
-V_busB = I * R_load = 2 × 10 = 20 V
+V_busB = I * R_load 
 ```
 
 
 #### 4.3 Expected Output
-In the [main.py](https://github.com/Kamisama-D/Simple_Circuit/blob/main/Simple_Circuit/main.py) file, create a DC circuit instance `my_circuit` named “Simple DC Circuit” and add variables using the given example:
+In the `main()` function of the [main.py](https://github.com/Kamisama-D/Simple_Circuit/blob/main/Simple_Circuit/main.py) file, create a DC circuit instance `my_circuit` named “Simple DC Circuit” :
 ```
 def main():
     my_circuit = Circuit("Simple DC Circuit")
+```
+
+Use the `add_bus()` function to add buses to the circuit, named “Bus A” and “Bus B”:
+```
     my_circuit.add_bus("Bus A")
     my_circuit.add_bus("Bus B")
+```
+
+Use the `add_ vsource_element ()` function to add voltage source to the circuit, named “Va”. It is connected to Bus A. Its voltage is 120 V:
+```
     my_circuit.add_vsource_element("Va", "Bus A", 120)
+```
+
+Use the `add_ resistor _element ()` function to add a resistor to the circuit, named “Rab”. It is connected to Bus A and Bus B. Its resistance is 50 Ohms:
+```
     my_circuit.add_resistor_element("Rab", "Bus A", "Bus B", 50)
+```
+
+Use the `add_ load _element ()` function to add a load to the circuit, named “Lb”. It is connected to Bus B. Its power is 1000 W, and its voltage is 100 V:
+```
     my_circuit.add_load_element("Lb", "Bus B", 1000, 100)
 ```
 
-Next, pass the created circuit `my_circuit` to the `Solution` class and call `the do_power_flow()` function to solve the problem:
+Pass the created circuit `my_circuit` to the `Solution` class and call `the do_power_flow()` function to solve the problem:
 ```
     solution = Solution(my_circuit)
     solution.do_power_flow()
