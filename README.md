@@ -23,6 +23,79 @@ The SCS provides a virtual environment where users can experiment with circuit c
 
 <img src="/diagram.png" alt="Figure 2. Diagram of the DC Circuit" width="450"/>
 
+#### 2.1 Bus
+A bus is an electrical junction where multiple circuit components like resistors and voltage sources connect, facilitating the distribution and routing of electrical power.
+
+##### Attributes:
+- **name (str):** Provided by the user as an argument when defining a bus.
+- **v (float):** Represents the voltage at the bus.
+
+##### Methods:
+- **set_bus_v(bus_v: float):** Sets the voltage at the bus.
+
+#### 2.2 Resistor
+A resistor is a passive electrical component that opposes and reduces current flow, thereby regulating the voltage within a circuit based on Ohm's law.
+
+##### Attributes:
+- **name (str):** Provided by the user as an argument when defining a resistor.
+- **bus1 (str):** One bus connected to the resistor.
+- **bus2 (str):** The other bus connected to the resistor.
+- **r (float):** Resistance of the resistor.
+- **g (float):** Conductance, calculated internally.
+  
+##### Methods:
+- **calc_g():** Calculates the conductance value (g).
+
+#### 2.3 3.	Load
+In an electrical circuit, a load is any component or device that consumes power, such as lights or motors, and typically represents the functional purpose of the circuit.
+
+##### Attributes:
+- **name (str):** Provided by the user as an argument when defining a load.
+- **bus1 (str):** The bus connected to the load.
+- **p (float):** Power at the load.
+- **v (float):** Voltage at the load.
+- **r (float):** Resistance of the load.
+- **g (float):** Conductance, calculated internally.
+
+##### Methods:
+- **calc_g():** Calculates the conductance value (g).
+
+#### 2.4 Vsource
+A voltage source is a component that provides a fixed or variable potential difference between its terminals to power a circuit, such as batteries or power supplies.
+
+##### Attributes:
+- **name (str):** Provided by the user as an argument when defining a voltage source.
+- **bus1 (str):** The bus connected to the voltage source.
+- **v (float):** Source voltage.
+
+#### 2.5 Circuit
+A circuit is a closed loop or pathway that allows electric current to flow and transport energy from a source to an intended set of loads.
+
+##### Attributes:
+- **name (str):** Provided by the user as an argument when defining a circuit.
+- **buses (Dict[str, Bus]):** A dictionary where each item has a bus name as the key and its corresponding Bus object as the value.
+- **resistors (Dict[str, Resistor]):** A dictionary where each item has a resistor name as the key and its corresponding Resistor object as the value.
+- **loads (Dict[str, Load]):** A dictionary where each item has a load name as the key and its corresponding Load object as the value.
+- **vsource (Vsource):** A Vsource object that is created using the add_vsource method of the Circuit class.
+- **i (float):** Current flowing through the circuit.
+
+##### Methods:
+- **add_bus(bus: str):** Adds a bus to the circuit.
+- **add_resistor_element(name: str, bus1: str, bus2: str, r: float):** Adds a resistor to the circuit.
+- **add_load_element(name: str, bus1: str, p: float, v: float):** Adds a load to the circuit.
+- **add_vsource_element(name: str, bus1: str, v: float):** Adds a voltage source to the circuit.
+- **set_i(i: float):** Updates the current flowing through the circuit.
+- **print_nodal_voltage():** Prints voltages at all buses.
+- **print_circuit_current():** Prints circuit current.
+
+#### 2.6 Solution
+
+##### Attributes:
+- **circuit (Circuit):** When creating a solution object, a Circuit object must be passed as an argument.
+
+##### Methods:
+- **do_power_flow():** Solves the circuit by finding bus voltages and circuit current.
+
 ### 3. Relevant Equations
 The equations used in the SCS include Ohm’s law, power-voltage relationship, conductance calculations, and KVL to solve for circuit voltages and current.
 
